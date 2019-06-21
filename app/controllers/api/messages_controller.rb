@@ -1,15 +1,17 @@
 class Api::MessagesController < ApplicationController
+  # before_action :authenticate_user
+
   def index
     @messages = Message.all
     render 'index.json.jbuilder'
   end
 
   def create
-    @message = Message.new {
+    @message = Message.new(
                             sender_id: params[:sender_id],
                             recipient_id: params[:recipient_id],
                             content: params[:content]
-                           }
+                          )
 
     if @message.save
       render 'show.json.jbuilder'

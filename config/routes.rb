@@ -33,5 +33,7 @@ Rails.application.routes.draw do
 
     get 'parks' => 'parks#index'
     get 'parks/:id' => 'parks#show'
+
+    post '/sessions' => 'sessions#create'
   end
 end

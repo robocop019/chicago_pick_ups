@@ -1,14 +1,16 @@
 class Api::FriendshipsController < ApplicationController
+  # before_action :authenticate_user
+
   def index
     @friendships = Friendship.all
     render 'index.json.jbuilder'
   end
 
   def create
-    @friendship = Friendship.new {
+    @friendship = Friendship.new(
                                   friender_id: params[:friender_id],
                                   friendee_id: params[:friendee_id]
-                                 }
+                                )
 
     if @friendship.save
       render 'show.json.jbuilder'

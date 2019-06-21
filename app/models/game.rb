@@ -10,7 +10,7 @@ class Game < ApplicationRecord
   # enum :sport, ['baseball', 'basketball', ''] below associations and validations
   # filter in console with Game.all.enum
 
-  enum sport: { baseball: 0, basketball: 1, football: 2, soccer: 3, softball: 4, tennis: 5, volleyball: 6 }
+  enum sport: { baseball: 0, basketball: 1, football: 2, hockey: 3, soccer: 4, softball: 5, tennis: 6, volleyball: 7 }
 
   enum category: { casual: 0, competitive: 1, practice: 2 }
 end

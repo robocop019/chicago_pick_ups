@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'seed_dump', '~> 3.2', '>= 3.2.4'
 
+gem 'jwt'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

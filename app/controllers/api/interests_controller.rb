@@ -1,15 +1,17 @@
 class Api::InterestsController < ApplicationController
+  # before_action :authenticate_user
+
   def index
     @interests = Interest.all
     render 'index.json.jbuilder'
   end
 
   def create
-    @interest = Interest.new {
+    @interest = Interest.new(
                               user_id: params[:user_id],
                               game_id: params[:game_id],
                               status: params[:status]
-                             }
+                            )
 
     if @interest.save
       render 'show.json.jbuilder'

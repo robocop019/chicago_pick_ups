@@ -1,11 +1,17 @@
 class Api::GamesController < ApplicationController
+  before_action :authenticate_user, only: [:create]
+  before_action :authenticate_admin, only: [:update, :destroy]
+
   def index
     @games = Game.all
 
     sport = params[:sport]
+    category = params[:category]
     park_name = params[:park_name]
 
     @games = Game.where("sport = ?", "#{sport}") if sport
+
+    @games = Game.where("category = ?", "#{category}") if category
 
     if park_name
       park = Park.where("name iLIKE ?", "#{park_name}")
@@ -16,7 +22,7 @@ class Api::GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new {
+    @game = Game.new(
                       title: params[:title],
                       description: params[:description],
                       park_id: params[:park_id],
@@ -27,7 +33,7 @@ class Api::GamesController < ApplicationController
                       min_participants: params[:min_participants],
                       max_participants: params[:max_participants],
                       max_age: params[:max_age]
-                     }
+                    )
 
     if @game.save
       render 'show.json.jbuilder'
