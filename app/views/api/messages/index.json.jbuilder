@@ -1,1 +1,1 @@
-index.json.jbuilder
+json.array! @messages, partial: 'message', as: :message

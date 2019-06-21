@@ -1,1 +1,1 @@
-index.json.jbuilder
+json.array! @comments, partial: 'comment', as: :comment

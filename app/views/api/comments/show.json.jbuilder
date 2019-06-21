@@ -1,1 +1,1 @@
-show.json.jbuilder
+json.partial! @comment, partial: 'comment', as: :comment

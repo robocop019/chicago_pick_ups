@@ -1,1 +1,1 @@
-show.json.jbuilder
+json.partial! @game, partial: 'game', as: :game

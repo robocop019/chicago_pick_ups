@@ -4,10 +4,6 @@ class Api::CommentsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
-  def new
-    
-  end
-
   def create
     @comment = Comment.new {
                             user_id: params[:user_id],
@@ -24,10 +20,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def show
-    
-  end
-
-  def edit
     
   end
 

@@ -1,1 +1,1 @@
-index.json.jbuilder
+json.array! @games, partial: 'game', as: :game

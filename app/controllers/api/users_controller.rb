@@ -4,10 +4,6 @@ class Api::UsersController < ApplicationController
     render 'index.json.jbuilder'
   end
 
-  def new
-
-  end
-
   def create
     @user = User.new {
                         first_name: params[:first_name],
@@ -32,10 +28,6 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     render 'show.json.jbuilder'
-  end
-
-  def edit
-    
   end
 
   def update

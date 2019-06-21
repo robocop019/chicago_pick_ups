@@ -7,3 +7,4 @@ json.bio user.bio
 json.avatar_url user.avatar_url
 json.location user.location
 json.admin user.admin
+json.created_at user.created_at

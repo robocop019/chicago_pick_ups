@@ -1,17 +1,25 @@
 class Api::FriendshipsController < ApplicationController
   def index
-    
-  end
-
-  def new
-    
+    @friendships = Friendship.all
+    render 'index.json.jbuilder'
   end
 
   def create
-    
+    @friendship = Friendship.new {
+                                  friender_id: params[:friender_id],
+                                  friendee_id: params[:friendee_id]
+                                 }
+
+    if @friendship.save
+      render 'show.json.jbuilder'
+    else
+      render json: {message: @friendship.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    
+    @friendship = Friendship.find(params[:id])
+    @friendship.destroy
+    render json: {message: 'A long time ago, we used to be friends...'}
   end
 end

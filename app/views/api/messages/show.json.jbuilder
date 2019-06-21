@@ -1,1 +1,1 @@
-show.json.jbuilder
+json.partial! @message, partial: 'message', as: :message
