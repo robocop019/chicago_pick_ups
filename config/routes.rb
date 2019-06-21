@@ -16,14 +16,6 @@ Rails.application.routes.draw do
     patch 'games/:id' => 'games#update'
     delete 'games/:id' => 'games#destroy'
 
-    get 'messages' => 'messages#index'
-    get 'messages/new' => 'messages#new'
-    post 'messages' => 'messages#create'
-    get 'messages/:id' => 'messages#show'
-    get 'messages/:id/edit' => 'messages#edit'
-    patch 'messages/:id' => 'messages#update'
-    delete 'messages/:id' => 'messages#destroy'
-
     get 'comments' => 'comments#index'
     get 'comments/new' => 'comments#new'
     post 'comments' => 'comments#create'
@@ -31,6 +23,12 @@ Rails.application.routes.draw do
     get 'comments/:id/edit' => 'comments#edit'
     patch 'comments/:id' => 'comments#update'
     delete 'comments/:id' => 'comments#destroy'
+
+    get 'messages' => 'messages#index'
+    get 'messages/new' => 'messages#new'
+    post 'messages' => 'messages#create'
+    get 'messages/:id' => 'messages#show'
+    delete 'messages/:id' => 'messages#destroy'
 
     get 'friendships' => 'friendships#index'
     get 'friendships/new' => 'friendships#new'
@@ -44,6 +42,5 @@ Rails.application.routes.draw do
 
     get 'parks' => 'parks#index'
     get 'parks/:id' => 'parks#show'
-    
   end
 end

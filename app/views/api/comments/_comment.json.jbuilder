@@ -1,1 +1,1 @@
-_comment.json.jbuilder
+json.id comment.id
