@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :authenticate_admin, only: [:index]
   before_action :authenticate_user, only: [:update, :destroy]
 
   def index

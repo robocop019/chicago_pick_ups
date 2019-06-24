@@ -1,9 +1,10 @@
 class Api::GamesController < ApplicationController
-  before_action :authenticate_user, only: [:create]
+  before_action :authenticate_user
+  # , only: [:create, :show]
   before_action :authenticate_admin, only: [:update, :destroy]
 
   def index
-    @games = Game.all
+    @games = current_user.games
 
     sport = params[:sport]
     category = params[:category]

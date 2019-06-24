@@ -12,10 +12,8 @@ json.max_age game.max_age
 json.created_at game.created_at
 json.updated_at game.updated_at
 
-json.organizer do
-  json.partial! game.organizer, partial: 'api/users/user', as: :user
-end
-
 json.park do
   json.partial! game.park, partial: 'api/parks/park', as: :park
 end
+
+
