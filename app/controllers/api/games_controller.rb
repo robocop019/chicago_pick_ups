@@ -1,10 +1,9 @@
 class Api::GamesController < ApplicationController
-  before_action :authenticate_user
-  # , only: [:create, :show]
+  before_action :authenticate_user, only: [:create]
   before_action :authenticate_admin, only: [:update, :destroy]
 
   def index
-    @games = current_user.games
+    @games = Game.all
 
     sport = params[:sport]
     category = params[:category]
@@ -16,7 +15,7 @@ class Api::GamesController < ApplicationController
 
     if park_name
       park = Park.where("name iLIKE ?", "#{park_name}")
-      @games = Game.where("park_id = ?", "#{park.api_ref}")
+      @games = Game.where("park_id = ?", "#{park.id}")
     end
 
     render 'index.json.jbuilder'
