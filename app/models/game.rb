@@ -1,9 +1,9 @@
 class Game < ApplicationRecord
   has_many :comments, as: :commentable
-  has_many :parks
   has_many :interests
   has_many :users, through: :interests
 
+  belongs_to :park
   belongs_to :organizer, class_name: "User"
 
 
