@@ -3,12 +3,18 @@ class Api::CommentsController < ApplicationController
 
   def index
 
+    @comments = Comment.all
+
+    user_id = params[:user_id]
     commentable_id = params[:commentable_id]
     commentable_type = params[:commentable_type]
 
-    if commentable_type && commentable_id
-      @comments = Comment.where("hidden = ? AND commentable_type = ? AND commentable_id = ?", "#{false}", "#{commentable_type}", "#{commentable_id}")
-      render 'index.json.jbuilder'
+    @comments = Comment.where("user_id = ? AND hidden = ?", "#{user_id}", "#{false}") if user_id
+
+    @comments = Comment.where("hidden = ? AND commentable_type = ? AND commentable_id = ?", "#{false}", "#{commentable_type}", "#{commentable_id}") if commentable_type && commentable_id
+
+
+    if render 'index.json.jbuilder'
     else
       render json: {message: 'You messed up!'}, status: :unprocessable_entity 
     end
