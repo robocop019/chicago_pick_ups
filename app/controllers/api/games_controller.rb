@@ -3,19 +3,19 @@ class Api::GamesController < ApplicationController
   before_action :authenticate_admin, only: [:update, :destroy]
 
   def index
-    @games = Game.all
+    @games = Game.all.order(:id)
 
     sport = params[:sport]
     category = params[:category]
     park_name = params[:park_name]
 
-    @games = Game.where("sport = ?", "#{sport}") if sport
+    @games = Game.where("sport = ?", "#{sport}").order(:id) if sport
 
-    @games = Game.where("category = ?", "#{category}") if category
+    @games = Game.where("category = ?", "#{category}").order(:id) if category
 
     if park_name
       park = Park.where("name iLIKE ?", "#{park_name}")
-      @games = Game.where("park_id = ?", "#{park.id}")
+      @games = Game.where("park_id = ?", "#{park.id}").order(:id)
     end
 
     render 'index.json.jbuilder'

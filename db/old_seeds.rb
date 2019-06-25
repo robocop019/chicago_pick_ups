@@ -15,11 +15,6 @@
 #   {park_id: 5, title: "3 on 3 Basketball", description: "Hardcore street game", sport: "basketball", category: "competitive", start_time: "0007-03-19 04:30:00", min_participants: 6, max_participants: nil, max_age: nil, organizer_id: 1}
 # ])
 # Park.create!([
-#   {api_ref: 500, name: "United Center", location: "Madison St"},
-#   {api_ref: 45, name: "United Center", location: "West Madison St"},
-#   {api_ref: 30, name: "Soldier Field", location: "Mueseum Campus"},
-#   {api_ref: 90, name: "Lincoln Park", location: "Lincoln Park"},
-#   {api_ref: 10, name: "North Ave Beach", location: "North Ave"},
 #   {api_ref: 9, name: "HAMILTON (ALEXANDER)", location: "-87.63769763, 41.76299921"},
 #   {api_ref: 106, name: "HAMLIN (HANNIBAL)", location: "-87.68030436, 41.93675715"},
 #   {api_ref: 1111, name: "HANSBERRY (LORRAINE)", location: "-87.62029752, 41.79189638"},

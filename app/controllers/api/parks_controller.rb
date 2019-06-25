@@ -1,6 +1,6 @@
 class Api::ParksController < ApplicationController
   def index
-    @parks = Park.all
+    @parks = Park.all.order(:name)
     render 'index.json.jbuilder'
   end
 
