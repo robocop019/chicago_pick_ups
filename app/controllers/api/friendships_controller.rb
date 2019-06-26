@@ -2,7 +2,13 @@ class Api::FriendshipsController < ApplicationController
   # before_action :authenticate_user
 
   def index
+
     @friendships = Friendship.all
+
+    user_id = params[:user_id]
+
+    @friendships = Friendship.where("friender_id = ?", "#{user_id}") if user_id
+
     render 'index.json.jbuilder'
   end
 

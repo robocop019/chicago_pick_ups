@@ -1,3 +1,3 @@
 json.id friendship.id
-json.friender friendship.friender
-json.friendee friendship.friendee
+json.friender_id friendship.friender_id
+json.friendee_id friendship.friendee_id

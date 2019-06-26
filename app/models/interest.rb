@@ -1,4 +1,7 @@
 class Interest < ApplicationRecord
+  
+  # validates
+
   belongs_to :user
   belongs_to :game
 

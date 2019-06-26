@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     delete 'messages/:id' => 'messages#destroy'
 
     get 'friendships' => 'friendships#index'
-    post 'friendships' => 'friendships#crete'
+    post 'friendships' => 'friendships#create'
     delete 'friendships/:id' => 'friendships#destroy'
 
     get 'interests' => 'interests#index'
