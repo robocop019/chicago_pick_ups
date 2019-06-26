@@ -5,9 +5,11 @@ class Api::FriendshipsController < ApplicationController
 
     @friendships = Friendship.all
 
-    user_id = params[:user_id]
+    friender_id = params[:friender_id]
+    friendee_id = params[:friendee_id]
 
-    @friendships = Friendship.where("friender_id = ?", "#{user_id}") if user_id
+    @friendships = Friendship.where("friender_id = ?", "#{friender_id}") if friender_id
+    @friendships = Friendship.where("friendee_id = ?", "#{friendee_id}") if friendee_id
 
     render 'index.json.jbuilder'
   end

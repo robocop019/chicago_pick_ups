@@ -1,1 +1,1 @@
-json.partial!, partial: 'interest', as: :interest
+json.partial! @interest, partial: 'interest', as: :interest
