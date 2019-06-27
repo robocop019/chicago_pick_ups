@@ -1,5 +1,5 @@
 class Api::InterestsController < ApplicationController
-  # before_action :authenticate_user
+  before_action :authenticate_user, only: [:create, :destroy]
 
   def index
 
