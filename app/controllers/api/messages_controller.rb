@@ -16,7 +16,7 @@ class Api::MessagesController < ApplicationController
     if @message.save
       render 'show.json.jbuilder'
     else
-      render json: {message: @message.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @message.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
