@@ -1,6 +1,6 @@
 class Interest < ApplicationRecord
   
-  # validates
+  validates_uniqueness_of :game_id, {scope: :user_id, message: 'No double follows'}
 
   belongs_to :user
   belongs_to :game

@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
-  # validates :password, confirmation: { message: 'Passwords do not Match'}, on: :create, :update
+  validates :password, confirmation: true, on: :create
   # validates :password_confirmation, presence: true, on: :create, :update
 
   has_many :comments

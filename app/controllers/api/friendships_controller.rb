@@ -23,7 +23,7 @@ class Api::FriendshipsController < ApplicationController
     if @friendship.save
       render 'show.json.jbuilder'
     else
-      render json: {message: @friendship.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: @friendship.errors.full_messages}, status: :unprocessable_entity
     end
   end
 

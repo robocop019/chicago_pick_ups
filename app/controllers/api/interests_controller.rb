@@ -26,7 +26,7 @@ class Api::InterestsController < ApplicationController
     if @interest.save
       render 'show.json.jbuilder'
     else
-      render json: {message: @interest.errors.full_messages}, as: :unprocessable_entity
+      render json: {errors: @interest.errors.full_messages}, as: :unprocessable_entity
     end
   end
 
