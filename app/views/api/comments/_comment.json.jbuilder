@@ -1,8 +1,11 @@
 json.id comment.id
+json.user_id comment.user_id
+json.user_first_name comment.user.first_name
+json.user_last_name comment.user.last_name
 json.commentable_id comment.commentable_id
 json.commentable_type comment.commentable_type
 json.content comment.content
 json.rating comment.rating
 json.hidden comment.hidden
-json.created_at comment.created_at
-json.updated_at comment.updated_at
+json.created_at comment.formatted_created_at
+json.updated_at comment.formatted_updated_at

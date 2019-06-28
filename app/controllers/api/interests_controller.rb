@@ -8,9 +8,9 @@ class Api::InterestsController < ApplicationController
     user_id = params[:user_id]
     game_id = params[:game_id]
 
-    @interests = Interest.where("user_id = ?", "#{user_id}") if user_id
+    @interests = Interest.where("user_id = ?", "#{user_id}").order(status: :desc) if user_id
 
-    @interests = Interest.where("game_id = ?", "#{game_id}") if game_id
+    @interests = Interest.where("game_id = ?", "#{game_id}").order(status: :desc) if game_id
 
 
     render 'index.json.jbuilder'
