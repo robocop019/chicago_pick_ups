@@ -1,6 +1,6 @@
 class Interest < ApplicationRecord
   
-  validates_uniqueness_of :game_id, {scope: :user_id}
+  validates :game_id, uniqueness: {scope: :user_id, message: 'Can\'t be interested in same game twice'}
 
   belongs_to :user
   belongs_to :game
