@@ -3,6 +3,14 @@ class Api::MessagesController < ApplicationController
 
   def index
     @messages = Message.all
+
+    sender_id = params[:sender_id]
+    
+    recipient_id = params[:recipient_id]
+
+    @messages = Message.where("sender_id = ?", "#{sender_id}") if sender_id
+    @messages = Message.where("recipient_id = ?", "#{recipient_id}") if recipient_id
+
     render 'index.json.jbuilder'
   end
 
