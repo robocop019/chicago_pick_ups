@@ -1,6 +1,10 @@
 json.id message.id
 json.sender_id message.sender_id
+json.sender_first_name User.find(message.sender_id).first_name
+json.sender_last_name User.find(message.sender_id).last_name
 json.recipient_id message.recipient_id
+json.recipient_first_name User.find(message.recipient_id).first_name
+json.recipient_last_name User.find(message.recipient_id).last_name
 json.content message.content
 json.hidden message.hidden
-json.created_at message.created_at
+json.time message.formatted_created_at
