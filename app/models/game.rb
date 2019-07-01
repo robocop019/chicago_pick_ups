@@ -13,9 +13,9 @@ class Game < ApplicationRecord
   # enum :sport, ['baseball', 'basketball', ''] below associations and validations
   # filter in console with Game.all.enum
 
-  enum sport: { baseball: 0, basketball: 1, football: 2, hockey: 3, soccer: 4, softball: 5, tennis: 6, volleyball: 7 }
+  enum sport: { Baseball: 0, Basketball: 1, Football: 2, Hockey: 3, Soccer: 4, Softball: 5, Tennis: 6, Volleyball: 7 }
 
-  enum category: { casual: 0, competitive: 1, practice: 2 }
+  enum category: { Casual: 0, Competitive: 1, Practice: 2 }
 
   def formatted_start_time
     start_time.strftime("%A, %B %e, %Y, %l:%M %p") if start_time != nil
